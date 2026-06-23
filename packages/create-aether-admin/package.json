@@ -13,6 +13,10 @@
     "README.md",
     "README.zh-CN.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "vue",
     "vite",
@@ -24,5 +28,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "scripts": {
+    "pack:check": "npm pack --dry-run --cache ./.npm-cache",
+    "publish:latest": "npm publish --access public --cache ./.npm-cache"
   }
 }
