@@ -1,0 +1,52 @@
+:root {
+  --admin-bg: 246 248 251;
+  --admin-surface: 255 255 255;
+  --admin-surface-2: 249 250 252;
+  --admin-text: 16 24 40;
+  --admin-text-muted: 102 112 133;
+  --admin-border: 227 232 239;
+  --admin-border-soft: 238 242 246;
+  --admin-primary: 22 119 255;
+  --admin-primary-soft: 234 242 255;
+  --admin-success: 236 253 243;
+  --admin-success-text: 6 118 71;
+  --admin-warning: 255 247 237;
+  --admin-warning-text: 181 71 8;
+  --admin-danger: 254 243 242;
+  --admin-danger-text: 217 45 32;
+  --admin-radius: 12px;
+  --admin-radius-sm: 10px;
+  --el-color-primary: #1677ff;
+  --el-color-success: #17b26a;
+  --el-color-warning: #f79009;
+  --el-color-danger: #f04438;
+  --el-border-radius-base: 10px;
+  --el-border-radius-small: 8px;
+  --el-border-color: rgb(var(--admin-border));
+  --el-border-color-light: rgb(var(--admin-border-soft));
+  --el-fill-color-blank: rgb(var(--admin-surface));
+  --el-fill-color-light: rgb(var(--admin-surface-2));
+  --el-text-color-primary: rgb(var(--admin-text));
+  --el-text-color-regular: rgb(var(--admin-text));
+  --el-text-color-secondary: rgb(var(--admin-text-muted));
+  --el-bg-color: rgb(var(--admin-surface));
+  --el-bg-color-page: rgb(var(--admin-bg));
+}
+
+html.dark {
+  --admin-bg: 11 13 18;
+  --admin-surface: 17 19 24;
+  --admin-surface-2: 23 26 33;
+  --admin-text: 244 247 251;
+  --admin-text-muted: 168 176 190;
+  --admin-border: 37 42 51;
+  --admin-border-soft: 27 32 40;
+  --admin-primary-soft: 16 42 84;
+  --admin-success: 13 42 27;
+  --admin-success-text: 117 224 167;
+  --admin-warning: 51 32 12;
+  --admin-warning-text: 253 186 116;
+  --admin-danger: 58 18 18;
+  --admin-danger-text: 253 162 155;
+  color-scheme: dark;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "create-aether-admin",
+  "version": "0.1.0",
+  "description": "Create an Aether Design Admin Vue 3 + Element Plus starter project.",
+  "type": "module",
+  "bin": {
+    "create-aether-admin": "./bin/create-aether-admin.js",
+    "cea": "./bin/create-aether-admin.js"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "keywords": [
+    "vue",
+    "vite",
+    "element-plus",
+    "admin",
+    "template",
+    "starter"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
