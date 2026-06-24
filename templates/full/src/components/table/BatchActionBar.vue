@@ -40,7 +40,7 @@ function buttonType(tone?: StatusTone) {
   >
     <div
       v-if="visible"
-      class="flex flex-col gap-3 rounded-admin border border-admin-primary/30 bg-admin-primary-soft px-4 py-3 text-admin-primary md:flex-row md:items-center md:justify-between"
+      class="aether-batch-action-bar flex flex-col gap-3 rounded-admin border border-admin-primary/30 bg-admin-primary-soft px-4 py-3 text-admin-primary md:flex-row md:items-center md:justify-between"
       role="status"
       aria-live="polite"
     >
@@ -55,6 +55,7 @@ function buttonType(tone?: StatusTone) {
         <ElButton
           v-for="action in actions"
           :key="action.key"
+          class="aether-batch-action-button"
           size="small"
           :type="buttonType(action.tone)"
           :disabled="action.disabled || loading"
@@ -63,7 +64,16 @@ function buttonType(tone?: StatusTone) {
         >
           {{ action.label }}
         </ElButton>
-        <ElButton :icon="Close" size="small" text :disabled="loading" @click="emit('clear')"> Clear </ElButton>
+        <ElButton
+          class="aether-batch-clear-button"
+          :icon="Close"
+          size="small"
+          text
+          :disabled="loading"
+          @click="emit('clear')"
+        >
+          Clear
+        </ElButton>
       </div>
     </div>
   </Transition>

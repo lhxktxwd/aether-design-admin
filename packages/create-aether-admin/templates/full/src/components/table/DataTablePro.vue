@@ -125,7 +125,7 @@ function clearSelection() {
       :data="rows"
       row-key="id"
       :size="tableSize"
-      class="w-full"
+      class="aether-data-table w-full"
       @selection-change="handleSelectionChange"
     >
       <ElTableColumn type="selection" width="44" fixed="left" />

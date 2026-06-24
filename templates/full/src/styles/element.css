@@ -52,6 +52,67 @@
   border-bottom: 1px solid rgb(var(--admin-border-soft));
 }
 
+html.dark .aether-data-table {
+  --el-table-bg-color: rgb(var(--admin-surface));
+  --el-table-tr-bg-color: rgb(var(--admin-surface));
+  --el-table-header-bg-color: rgb(var(--admin-surface-2));
+  --el-table-row-hover-bg-color: rgb(var(--admin-primary-soft) / 0.72);
+  --el-table-border-color: rgb(var(--admin-border-soft));
+  color: rgb(var(--admin-text));
+}
+
+html.dark .aether-data-table .el-table__inner-wrapper::before {
+  background: rgb(var(--admin-border-soft));
+}
+
+html.dark .aether-data-table th.el-table__cell {
+  background: rgb(var(--admin-surface-2));
+  color: rgb(var(--admin-text-muted));
+}
+
+html.dark .aether-data-table td.el-table__cell {
+  background: rgb(var(--admin-surface));
+  color: rgb(var(--admin-text));
+  border-bottom-color: rgb(var(--admin-border-soft));
+}
+
+html.dark .aether-data-table .el-table__body tr:hover > td.el-table__cell {
+  background: rgb(var(--admin-primary-soft) / 0.72);
+}
+
+html.dark .aether-data-table .el-table-fixed-column--left,
+html.dark .aether-data-table .el-table-fixed-column--right {
+  background: rgb(var(--admin-surface));
+}
+
+html.dark .aether-data-table .el-checkbox__inner {
+  border-color: rgb(var(--admin-border));
+  background: rgb(var(--admin-surface-2));
+}
+
+html.dark .aether-data-table .el-checkbox__input.is-checked .el-checkbox__inner,
+html.dark .aether-data-table .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  border-color: rgb(var(--admin-primary));
+  background: rgb(var(--admin-primary));
+}
+
+html.dark .aether-batch-action-bar {
+  border-color: rgb(var(--admin-primary) / 0.38);
+  background: rgb(var(--admin-primary-soft) / 0.58);
+  color: rgb(var(--admin-primary));
+}
+
+html.dark .aether-batch-action-bar .aether-batch-clear-button.el-button.is-text {
+  border-color: transparent;
+  background: transparent;
+  color: rgb(var(--admin-text-muted));
+}
+
+html.dark .aether-batch-action-bar .aether-batch-clear-button.el-button.is-text:hover {
+  background: rgb(var(--admin-surface-2));
+  color: rgb(var(--admin-text));
+}
+
 .el-menu {
   border-right: 0;
   --el-menu-bg-color: transparent;

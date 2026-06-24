@@ -4,5 +4,11 @@
   "singleQuote": true,
   "semi": true,
   "trailingComma": "all",
-  "ignorePatterns": ["dist/**", "node_modules/**", "packages/create-aether-admin/.npm-cache/**"]
+  "ignorePatterns": [
+    "dist/**",
+    "node_modules/**",
+    "packages/create-aether-admin/.npm-cache/**",
+    "auto-imports.d.ts",
+    "components.d.ts"
+  ]
 }
