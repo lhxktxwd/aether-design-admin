@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true,
+    "vue": true
+  },
+  "plugins": ["typescript", "unicorn", "oxc", "vue"],
+  "ignorePatterns": ["dist/**", "node_modules/**"],
+  "rules": {
+    "eqeqeq": "warn",
+    "no-console": "warn",
+    "no-debugger": "error",
+    "vue/no-side-effects-in-computed-properties": "error",
+    "vue/no-watch-after-await": "error",
+    "vue/no-lifecycle-after-await": "error"
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.ts", "uno.config.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

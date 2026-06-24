@@ -26,7 +26,17 @@ import { reactive, ref } from 'vue';
 import type { DescriptionItem, OrderRecord, PaginationState, QueryFilters, TableDensity } from '@/types/design';
 
 const appStore = useAppStore();
-const filters = ref<QueryFilters>({ keyword: '', status: 'all', dateRange: [], tags: [], owner: '', region: '', minAmount: null, maxAmount: null, urlSynced: true });
+const filters = ref<QueryFilters>({
+  keyword: '',
+  status: 'all',
+  dateRange: [],
+  tags: [],
+  owner: '',
+  region: '',
+  minAmount: null,
+  maxAmount: null,
+  urlSynced: true,
+});
 const selectedRows = ref<OrderRecord[]>([]);
 const density = ref<TableDensity>('default');
 const pagination = reactive<PaginationState>({ page: 1, pageSize: 10, total: 128 });
@@ -46,14 +56,20 @@ const descriptionItems: DescriptionItem[] = [
     <PageHeader
       eyebrow="Design system"
       title="Aether Admin Design System"
-      description="Foundations, component inventory and critical patterns translated from the Aether Design boards into Vue 3, Element Plus and Tailwind."
+      description="Foundations, component inventory and critical patterns translated from the Aether Design boards into Vue 3, Element Plus and UnoCSS."
       :breadcrumbs="['Admin', 'Design System']"
     />
     <div class="space-y-8 p-8">
       <section class="grid gap-4 md:grid-cols-4">
-        <AetherCard v-for="principle in ['Weak borders', 'Calm density', 'Element compatible', 'Theme native']" :key="principle" compact>
-          <p class="font-display text-lg font-[650] text-admin-text">{{ principle }}</p>
-          <p class="mt-2 text-sm leading-6 text-admin-muted">Production rule captured from the Phase 1 foundations board.</p>
+        <AetherCard
+          v-for="principle in ['Weak borders', 'Calm density', 'Element compatible', 'Theme native']"
+          :key="principle"
+          compact
+        >
+          <p class="font-display text-lg font-650 text-admin-text">{{ principle }}</p>
+          <p class="mt-2 text-sm leading-6 text-admin-muted">
+            Production rule captured from the Phase 1 foundations board.
+          </p>
         </AetherCard>
       </section>
 
@@ -71,7 +87,10 @@ const descriptionItems: DescriptionItem[] = [
         </div>
       </AetherCard>
 
-      <AetherCard title="Component specification matrix" description="Every requested component includes usage, anatomy, states, size, accessibility, interaction and responsive rules.">
+      <AetherCard
+        title="Component specification matrix"
+        description="Every requested component includes usage, anatomy, states, size, accessibility, interaction and responsive rules."
+      >
         <ComponentSpecTable :specs="appStore.componentSpecs" />
       </AetherCard>
 
@@ -95,17 +114,38 @@ const descriptionItems: DescriptionItem[] = [
         </div>
       </AetherCard>
 
-      <AetherCard title="Query / Filter System" description="Saved query state, active filters, URL sync indicator and advanced panel.">
+      <AetherCard
+        title="Query / Filter System"
+        description="Saved query state, active filters, URL sync indicator and advanced panel."
+      >
         <QueryToolbar
           v-model="filters"
           :saved-views="[{ id: 'open', name: 'Open risks', filters, pinned: true }]"
-          :tag-options="[{ label: 'Enterprise', value: 'enterprise' }, { label: 'Risk', value: 'risk' }]"
+          :tag-options="[
+            { label: 'Enterprise', value: 'enterprise' },
+            { label: 'Risk', value: 'risk' },
+          ]"
           @apply="filters = $event"
-          @reset="filters = { keyword: '', status: 'all', dateRange: [], tags: [], owner: '', region: '', minAmount: null, maxAmount: null, urlSynced: false }"
+          @reset="
+            filters = {
+              keyword: '',
+              status: 'all',
+              dateRange: [],
+              tags: [],
+              owner: '',
+              region: '',
+              minAmount: null,
+              maxAmount: null,
+              urlSynced: false,
+            }
+          "
         />
       </AetherCard>
 
-      <AetherCard title="DataTable Pro" description="Column settings, density switch, row selection, batch actions and server pagination.">
+      <AetherCard
+        title="DataTable Pro"
+        description="Column settings, density switch, row selection, batch actions and server pagination."
+      >
         <DataTablePro
           v-model:selected-rows="selectedRows"
           v-model:density="density"
@@ -124,8 +164,19 @@ const descriptionItems: DescriptionItem[] = [
             <ElButton @click="confirmOpen = true">Open confirm</ElButton>
             <ElButton type="danger" plain @click="dangerOpen = true">Open danger</ElButton>
           </div>
-          <ConfirmDialog v-model="confirmOpen" title="Confirm changes" description="This dialog uses Element Plus behavior with Aether Design Admin footer styling." @confirm="confirmOpen = false" />
-          <DangerConfirm v-model="dangerOpen" title="Delete view?" description="This dangerous action requires typed confirmation." confirm-text="DELETE" @confirm="dangerOpen = false" />
+          <ConfirmDialog
+            v-model="confirmOpen"
+            title="Confirm changes"
+            description="This dialog uses Element Plus behavior with Aether Design Admin footer styling."
+            @confirm="confirmOpen = false"
+          />
+          <DangerConfirm
+            v-model="dangerOpen"
+            title="Delete view?"
+            description="This dangerous action requires typed confirmation."
+            confirm-text="DELETE"
+            @confirm="dangerOpen = false"
+          />
         </AetherCard>
 
         <AetherCard title="Advanced Form">
@@ -147,15 +198,27 @@ const descriptionItems: DescriptionItem[] = [
 
         <AetherCard title="UserMenu / NotificationPanel">
           <div class="flex items-center gap-3">
-            <NotificationPanel :notifications="appStore.notifications" @mark-all-read="appStore.markAllNotificationsRead" />
+            <NotificationPanel
+              :notifications="appStore.notifications"
+              @mark-all-read="appStore.markAllNotificationsRead"
+            />
             <UserMenu :profile="appStore.userProfile" />
           </div>
         </AetherCard>
       </div>
 
       <div class="grid gap-6 xl:grid-cols-2">
-        <PageState title="Page loading / empty / permission" description="Reusable page state surface for advanced pages." action-label="Primary action" />
-        <ResultState icon="success" title="Operation completed" sub-title="Result surface for completion and outcome flows." action-label="Continue" />
+        <PageState
+          title="Page loading / empty / permission"
+          description="Reusable page state surface for advanced pages."
+          action-label="Primary action"
+        />
+        <ResultState
+          icon="success"
+          title="Operation completed"
+          sub-title="Result surface for completion and outcome flows."
+          action-label="Continue"
+        />
       </div>
     </div>
   </section>

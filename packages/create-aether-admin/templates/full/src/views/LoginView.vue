@@ -17,7 +17,9 @@ const form = reactive({
       </div>
       <div class="max-w-2xl">
         <p class="font-mono text-xs font-bold uppercase text-[#6ea8ff]">Modern admin system</p>
-        <h1 class="mt-4 font-display text-5xl font-[650] leading-tight">Operational control without legacy admin fatigue.</h1>
+        <h1 class="mt-4 font-display text-5xl font-650 leading-tight">
+          Operational control without legacy admin fatigue.
+        </h1>
         <p class="mt-5 text-base leading-7 text-[#a8b0be]">
           Linear-inspired density, Element Plus compatibility, and production-ready Vue implementation.
         </p>
@@ -26,7 +28,7 @@ const form = reactive({
     </section>
     <section class="flex items-center justify-center bg-admin-surface p-8">
       <div class="w-full max-w-sm">
-        <h2 class="font-display text-3xl font-[650] text-admin-text">Sign in</h2>
+        <h2 class="font-display text-3xl font-650 text-admin-text">Sign in</h2>
         <p class="mt-2 text-sm text-admin-muted">Use your workspace credentials to continue.</p>
         <ElForm :model="form" label-position="top" class="mt-8 space-y-2">
           <ElFormItem label="Email">

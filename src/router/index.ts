@@ -14,6 +14,7 @@ import NotificationCenterView from '@/views/NotificationCenterView.vue';
 import AuditLogView from '@/views/AuditLogView.vue';
 import PermissionErrorView from '@/views/PermissionErrorView.vue';
 import AdminKitView from '@/views/AdminKitView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -25,13 +26,44 @@ export const router = createRouter({
     { path: '/settings', name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
     { path: '/design-system', name: 'design-system', component: DesignSystemView, meta: { title: 'Design System' } },
     { path: '/advanced-list', name: 'advanced-list', component: AdvancedListView, meta: { title: 'Advanced List' } },
-    { path: '/batch-management', name: 'batch-management', component: BatchManagementView, meta: { title: 'Batch Management' } },
+    {
+      path: '/batch-management',
+      name: 'batch-management',
+      component: BatchManagementView,
+      meta: { title: 'Batch Management' },
+    },
     { path: '/complex-edit', name: 'complex-edit', component: ComplexEditView, meta: { title: 'Complex Edit' } },
-    { path: '/detail-timeline', name: 'detail-timeline', component: DetailWithTimelineView, meta: { title: 'Timeline Detail' } },
-    { path: '/notifications', name: 'notifications', component: NotificationCenterView, meta: { title: 'Notifications' } },
+    {
+      path: '/detail-timeline',
+      name: 'detail-timeline',
+      component: DetailWithTimelineView,
+      meta: { title: 'Timeline Detail' },
+    },
+    {
+      path: '/notifications',
+      name: 'notifications',
+      component: NotificationCenterView,
+      meta: { title: 'Notifications' },
+    },
     { path: '/audit-log', name: 'audit-log', component: AuditLogView, meta: { title: 'Audit Log' } },
-    { path: '/permission-error', name: 'permission-error', component: PermissionErrorView, meta: { title: 'Permission State' } },
+    {
+      path: '/permission-error',
+      name: 'permission-error',
+      component: PermissionErrorView,
+      meta: { title: 'Permission State' },
+    },
     { path: '/admin-kit', name: 'admin-kit', component: AdminKitView, meta: { title: 'Admin Kit' } },
     { path: '/login', name: 'login', component: LoginView, meta: { public: true, title: 'Login' } },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView,
+      meta: { public: true, title: 'Not Found' },
+    },
   ],
+});
+
+router.afterEach((to) => {
+  const appTitle = import.meta.env.VITE_APP_TITLE ?? 'Aether Admin';
+  document.title = to.meta.title ? `${String(to.meta.title)} - ${appTitle}` : appTitle;
 });

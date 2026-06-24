@@ -51,7 +51,7 @@ const groupedOptions = computed(() => {
         :disabled="option.disabled"
       >
         <div class="flex min-w-0 flex-col py-1">
-          <span class="truncate text-sm font-[650] text-admin-text">{{ option.label }}</span>
+          <span class="truncate text-sm font-650 text-admin-text">{{ option.label }}</span>
           <span v-if="option.description" class="truncate text-xs text-admin-muted">{{ option.description }}</span>
         </div>
       </ElOption>

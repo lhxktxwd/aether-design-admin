@@ -17,10 +17,14 @@ const statusTone: Record<AttachmentItem['status'], StatusTone> = {
 
 <template>
   <div class="space-y-3">
-    <div v-for="item in items" :key="item.id" class="rounded-admin border border-admin-border-soft bg-admin-surface p-4">
+    <div
+      v-for="item in items"
+      :key="item.id"
+      class="rounded-admin border border-admin-border-soft bg-admin-surface p-4"
+    >
       <div class="flex items-center justify-between gap-4">
         <div class="min-w-0">
-          <p class="truncate text-sm font-[650] text-admin-text">{{ item.name }}</p>
+          <p class="truncate text-sm font-650 text-admin-text">{{ item.name }}</p>
           <p class="mt-1 text-xs text-admin-muted">{{ item.size }} · {{ item.updatedAt }}</p>
         </div>
         <div class="flex items-center gap-2">

@@ -49,17 +49,30 @@ function removeRow(id: string) {
       </ElTableColumn>
       <ElTableColumn label="Qty" width="132">
         <template #default="{ row }">
-          <ElInputNumber v-model="(row as EditableSkuRow).quantity" :min="1" controls-position="right" class="!w-full" />
+          <ElInputNumber
+            v-model="(row as EditableSkuRow).quantity"
+            :min="1"
+            controls-position="right"
+            class="!w-full"
+          />
         </template>
       </ElTableColumn>
       <ElTableColumn label="Price" width="148">
         <template #default="{ row }">
-          <ElInputNumber v-model="(row as EditableSkuRow).price" :min="0" :precision="2" controls-position="right" class="!w-full" />
+          <ElInputNumber
+            v-model="(row as EditableSkuRow).price"
+            :min="0"
+            :precision="2"
+            controls-position="right"
+            class="!w-full"
+          />
         </template>
       </ElTableColumn>
       <ElTableColumn label="Amount" width="132" align="right">
         <template #default="{ row }">
-          <span class="font-mono text-sm font-bold text-admin-text">${{ ((row as EditableSkuRow).quantity * (row as EditableSkuRow).price).toFixed(2) }}</span>
+          <span class="font-mono text-sm font-bold text-admin-text"
+            >${{ ((row as EditableSkuRow).quantity * (row as EditableSkuRow).price).toFixed(2) }}</span
+          >
         </template>
       </ElTableColumn>
       <ElTableColumn width="64" align="center">

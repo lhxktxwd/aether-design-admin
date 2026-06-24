@@ -28,7 +28,7 @@ const unreadCount = computed(() => props.notifications.filter((item) => !item.re
     <section class="space-y-3">
       <header class="flex items-center justify-between gap-3">
         <div>
-          <h3 class="text-sm font-[650] text-admin-text">Notifications</h3>
+          <h3 class="text-sm font-650 text-admin-text">Notifications</h3>
           <p class="text-xs text-admin-muted">{{ unreadCount }} unread</p>
         </div>
         <ElButton size="small" text :disabled="unreadCount === 0" @click="emit('markAllRead')">Mark all read</ElButton>
@@ -44,7 +44,7 @@ const unreadCount = computed(() => props.notifications.filter((item) => !item.re
           @click="emit('open', notification)"
         >
           <div class="flex justify-between gap-3">
-            <p class="text-sm font-[650] text-admin-text">{{ notification.title }}</p>
+            <p class="text-sm font-650 text-admin-text">{{ notification.title }}</p>
             <span class="shrink-0 font-mono text-[11px] text-admin-muted">{{ notification.time }}</span>
           </div>
           <p class="mt-1 text-sm leading-5 text-admin-muted">{{ notification.description }}</p>

@@ -40,12 +40,10 @@ function isActive(view: SavedView) {
   <section class="rounded-admin border border-admin-border-soft bg-admin-surface p-3">
     <div class="mb-3 flex items-center justify-between gap-3">
       <div>
-        <p class="text-sm font-[650] text-admin-text">Saved views</p>
+        <p class="text-sm font-650 text-admin-text">Saved views</p>
         <p class="text-xs text-admin-muted">Reusable query states</p>
       </div>
-      <ElButton size="small" :disabled="disabled" :loading="loading" @click="emit('save')">
-        Save view
-      </ElButton>
+      <ElButton size="small" :disabled="disabled" :loading="loading" @click="emit('save')"> Save view </ElButton>
     </div>
 
     <div v-if="sortedViews.length" class="flex flex-wrap gap-2">
@@ -72,7 +70,7 @@ function isActive(view: SavedView) {
 
         <button
           type="button"
-          class="min-w-0 truncate text-xs font-[650]"
+          class="min-w-0 truncate text-xs font-650"
           :disabled="disabled"
           @click="emit('select', view)"
         >
@@ -96,7 +94,10 @@ function isActive(view: SavedView) {
       </div>
     </div>
 
-    <div v-else class="rounded-admin-sm border border-dashed border-admin-border bg-admin-surface-2 px-3 py-4 text-sm text-admin-muted">
+    <div
+      v-else
+      class="rounded-admin-sm border border-dashed border-admin-border bg-admin-surface-2 px-3 py-4 text-sm text-admin-muted"
+    >
       No saved views yet. Apply filters and save the current query.
     </div>
   </section>

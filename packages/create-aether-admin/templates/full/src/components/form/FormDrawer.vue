@@ -45,13 +45,22 @@ function handleClose(done: () => void) {
   <ElDrawer v-model="model" :title="title" :size="size" :before-close="handleClose" :close-on-press-escape="!locked">
     <div class="flex h-full flex-col">
       <p v-if="description" class="mb-4 text-sm leading-6 text-admin-muted">{{ description }}</p>
-      <ElAlert v-if="dirty" class="mb-4" type="warning" show-icon :closable="false" title="Unsaved changes will be lost if you leave." />
+      <ElAlert
+        v-if="dirty"
+        class="mb-4"
+        type="warning"
+        show-icon
+        :closable="false"
+        title="Unsaved changes will be lost if you leave."
+      />
       <div v-loading="loading" class="min-h-0 flex-1 overflow-auto pr-1">
         <slot />
       </div>
       <footer class="mt-4 flex justify-end gap-2 border-t border-admin-border-soft pt-4">
         <ElButton :disabled="locked" @click="emit('cancel')">Cancel</ElButton>
-        <ElButton type="primary" :loading="submitting" :disabled="disabled || loading" @click="emit('submit')">Save changes</ElButton>
+        <ElButton type="primary" :loading="submitting" :disabled="disabled || loading" @click="emit('submit')"
+          >Save changes</ElButton
+        >
       </footer>
     </div>
   </ElDrawer>

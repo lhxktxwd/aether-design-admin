@@ -27,10 +27,10 @@ const gridClass = computed(() => {
   <section class="rounded-admin border border-admin-border-soft bg-admin-surface p-5 shadow-aether-soft">
     <header class="mb-5 flex items-start justify-between gap-4">
       <div>
-        <h2 class="font-display text-lg font-[650] text-admin-text">{{ title }}</h2>
+        <h2 class="font-display text-lg font-650 text-admin-text">{{ title }}</h2>
         <p v-if="description" class="mt-1 text-sm leading-6 text-admin-muted">{{ description }}</p>
       </div>
-      <span v-if="readonly" class="rounded-full bg-admin-surface-2 px-2.5 py-1 text-xs font-[650] text-admin-muted">
+      <span v-if="readonly" class="rounded-full bg-admin-surface-2 px-2.5 py-1 text-xs font-650 text-admin-muted">
         Readonly
       </span>
     </header>

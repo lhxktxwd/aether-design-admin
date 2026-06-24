@@ -20,9 +20,13 @@ const appStore = useAppStore();
         <ElTabs>
           <ElTabPane label="General">
             <div class="divide-y divide-admin-border-soft rounded-admin border border-admin-border bg-admin-surface">
-              <div v-for="setting in appStore.settings" :key="setting.label" class="flex items-center justify-between gap-6 p-4">
+              <div
+                v-for="setting in appStore.settings"
+                :key="setting.label"
+                class="flex items-center justify-between gap-6 p-4"
+              >
                 <div>
-                  <p class="text-sm font-[650] text-admin-text">{{ setting.label }}</p>
+                  <p class="text-sm font-650 text-admin-text">{{ setting.label }}</p>
                   <p class="mt-1 text-sm text-admin-muted">{{ setting.description }}</p>
                 </div>
                 <ElSwitch v-model="setting.enabled" />
@@ -30,10 +34,18 @@ const appStore = useAppStore();
             </div>
           </ElTabPane>
           <ElTabPane label="Security">
-            <AetherCard title="Security controls" description="Session, password and access policy controls share the same setting row pattern." compact />
+            <AetherCard
+              title="Security controls"
+              description="Session, password and access policy controls share the same setting row pattern."
+              compact
+            />
           </ElTabPane>
           <ElTabPane label="Billing">
-            <AetherCard title="Billing controls" description="Plan, invoice and payment methods use the same form primitives." compact />
+            <AetherCard
+              title="Billing controls"
+              description="Plan, invoice and payment methods use the same form primitives."
+              compact
+            />
           </ElTabPane>
         </ElTabs>
       </AetherCard>

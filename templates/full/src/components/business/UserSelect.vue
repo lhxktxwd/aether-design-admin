@@ -54,11 +54,13 @@ function initials(name: string) {
     </template>
     <ElOption v-for="user in users" :key="user.id" :label="user.name" :value="user.id">
       <div class="flex min-w-0 items-center gap-3 py-1">
-        <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-admin-primary-soft text-xs font-bold text-admin-primary">
+        <span
+          class="flex size-7 shrink-0 items-center justify-center rounded-full bg-admin-primary-soft text-xs font-bold text-admin-primary"
+        >
           {{ initials(user.name) }}
         </span>
         <span class="min-w-0 flex-1">
-          <span class="block truncate text-sm font-[650] text-admin-text">{{ user.name }}</span>
+          <span class="block truncate text-sm font-650 text-admin-text">{{ user.name }}</span>
           <span class="block truncate text-xs text-admin-muted">{{ user.email }}</span>
         </span>
         <span class="shrink-0 text-xs text-admin-muted">{{ user.role }}</span>

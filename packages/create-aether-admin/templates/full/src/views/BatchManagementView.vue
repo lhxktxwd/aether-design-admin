@@ -48,7 +48,11 @@ function submitAction() {
       :breadcrumbs="['Admin', 'Batch Management']"
     />
     <div class="space-y-6 p-8">
-      <AetherCard title="Batch safety model" description="Destructive operations require explicit confirmation while safe actions use a standard confirm dialog." compact />
+      <AetherCard
+        title="Batch safety model"
+        description="Destructive operations require explicit confirmation while safe actions use a standard confirm dialog."
+        compact
+      />
       <DataTablePro
         v-model:selected-rows="selectedRows"
         v-model:density="density"
@@ -62,8 +66,21 @@ function submitAction() {
         @page-change="pagination.page = $event"
         @page-size-change="pagination.pageSize = $event"
       />
-      <ConfirmDialog v-model="confirmOpen" :title="currentAction ? currentAction.label : 'Confirm action'" description="Apply this action to the selected rows?" :loading="submitting" @confirm="submitAction" />
-      <DangerConfirm v-model="dangerOpen" title="Delete selected rows?" description="This destructive batch operation cannot be undone." confirm-text="DELETE" :loading="submitting" @confirm="submitAction" />
+      <ConfirmDialog
+        v-model="confirmOpen"
+        :title="currentAction ? currentAction.label : 'Confirm action'"
+        description="Apply this action to the selected rows?"
+        :loading="submitting"
+        @confirm="submitAction"
+      />
+      <DangerConfirm
+        v-model="dangerOpen"
+        title="Delete selected rows?"
+        description="This destructive batch operation cannot be undone."
+        confirm-text="DELETE"
+        :loading="submitting"
+        @confirm="submitAction"
+      />
     </div>
   </section>
 </template>

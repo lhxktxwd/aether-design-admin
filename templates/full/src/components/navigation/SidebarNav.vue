@@ -41,7 +41,9 @@ function findOpenGroups(items: NavItem[], path: string, parents: string[] = []):
     :class="appStore.sidebarCollapsed ? 'w-16' : 'w-64'"
   >
     <div class="flex h-16 items-center gap-3 px-4">
-      <div class="flex size-8 shrink-0 items-center justify-center rounded-[10px] bg-admin-primary text-sm font-black text-white">
+      <div
+        class="flex size-8 shrink-0 items-center justify-center rounded-[10px] bg-admin-primary text-sm font-black text-white"
+      >
         A
       </div>
       <div v-if="!appStore.sidebarCollapsed" class="min-w-0">

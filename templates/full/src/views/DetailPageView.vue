@@ -37,9 +37,17 @@ import PageHeader from '@/components/common/PageHeader.vue';
 
         <AetherCard title="Usage profile" description="A calm two-column detail section for operational inspection.">
           <div class="grid gap-4 md:grid-cols-3">
-            <div v-for="item in [{ label: 'Seats', value: '184' }, { label: 'Workflows', value: '42' }, { label: 'MTD spend', value: '$18.6K' }]" :key="item.label" class="rounded-admin-sm border border-admin-border-soft bg-admin-surface-2 p-4">
+            <div
+              v-for="item in [
+                { label: 'Seats', value: '184' },
+                { label: 'Workflows', value: '42' },
+                { label: 'MTD spend', value: '$18.6K' },
+              ]"
+              :key="item.label"
+              class="rounded-admin-sm border border-admin-border-soft bg-admin-surface-2 p-4"
+            >
               <p class="text-sm text-admin-muted">{{ item.label }}</p>
-              <p class="mt-2 font-mono text-2xl font-[650] text-admin-text">{{ item.value }}</p>
+              <p class="mt-2 font-mono text-2xl font-650 text-admin-text">{{ item.value }}</p>
             </div>
           </div>
         </AetherCard>

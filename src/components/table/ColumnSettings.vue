@@ -42,7 +42,7 @@ function updateFixed(key: OrderRecordKey, fixed: DataTableColumn['fixed'] | unde
     <section class="space-y-3">
       <header class="flex items-start justify-between gap-3">
         <div>
-          <h3 class="text-sm font-[650] text-admin-text">Column settings</h3>
+          <h3 class="text-sm font-650 text-admin-text">Column settings</h3>
           <p class="mt-1 text-xs leading-5 text-admin-muted">Manage visibility and fixed column behavior.</p>
         </div>
         <ElButton size="small" text @click="emit('reset')">Reset</ElButton>
@@ -65,10 +65,20 @@ function updateFixed(key: OrderRecordKey, fixed: DataTableColumn['fixed'] | unde
             <span class="font-mono text-[11px] text-admin-muted">{{ column.key }}</span>
           </div>
           <div class="mt-2 flex items-center gap-2">
-            <ElButton size="small" :type="column.fixed === 'left' ? 'primary' : 'default'" text @click="updateFixed(column.key, column.fixed === 'left' ? undefined : 'left')">
+            <ElButton
+              size="small"
+              :type="column.fixed === 'left' ? 'primary' : 'default'"
+              text
+              @click="updateFixed(column.key, column.fixed === 'left' ? undefined : 'left')"
+            >
               Fix left
             </ElButton>
-            <ElButton size="small" :type="column.fixed === 'right' ? 'primary' : 'default'" text @click="updateFixed(column.key, column.fixed === 'right' ? undefined : 'right')">
+            <ElButton
+              size="small"
+              :type="column.fixed === 'right' ? 'primary' : 'default'"
+              text
+              @click="updateFixed(column.key, column.fixed === 'right' ? undefined : 'right')"
+            >
               Fix right
             </ElButton>
           </div>

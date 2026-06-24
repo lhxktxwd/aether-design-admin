@@ -119,7 +119,13 @@ function resetFilters() {
           />
 
           <ElSelect v-model="filters.status" :disabled="disabled" class="w-full" placeholder="Status">
-            <ElOption v-for="option in statusOptions" :key="option.value" :label="option.label" :value="option.value" :disabled="option.disabled" />
+            <ElOption
+              v-for="option in statusOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+              :disabled="option.disabled"
+            />
           </ElSelect>
 
           <ElDatePicker
@@ -147,13 +153,26 @@ function resetFilters() {
         </div>
       </div>
 
-      <div v-if="activeFilterCount > 0" class="mt-3 flex flex-wrap items-center gap-2 border-t border-admin-border-soft pt-3">
-        <ElTag v-if="filters.keyword" closable round @close="filters.keyword = ''">Keyword: {{ filters.keyword }}</ElTag>
-        <ElTag v-if="filters.status !== 'all'" closable round @close="filters.status = 'all'">Status: {{ activeStatusLabel }}</ElTag>
+      <div
+        v-if="activeFilterCount > 0"
+        class="mt-3 flex flex-wrap items-center gap-2 border-t border-admin-border-soft pt-3"
+      >
+        <ElTag v-if="filters.keyword" closable round @close="filters.keyword = ''"
+          >Keyword: {{ filters.keyword }}</ElTag
+        >
+        <ElTag v-if="filters.status !== 'all'" closable round @close="filters.status = 'all'"
+          >Status: {{ activeStatusLabel }}</ElTag
+        >
         <ElTag v-if="filters.dateRange.length === 2" closable round @close="filters.dateRange = []">
           Date: {{ filters.dateRange[0] }} → {{ filters.dateRange[1] }}
         </ElTag>
-        <ElTag v-for="tag in filters.tags" :key="tag" closable round @close="filters.tags = filters.tags.filter((item) => item !== tag)">
+        <ElTag
+          v-for="tag in filters.tags"
+          :key="tag"
+          closable
+          round
+          @close="filters.tags = filters.tags.filter((item) => item !== tag)"
+        >
           Tag: {{ tag }}
         </ElTag>
       </div>

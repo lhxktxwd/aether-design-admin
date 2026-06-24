@@ -27,8 +27,20 @@ const loading = ref(false);
 const pagination = reactive<PaginationState>({ page: 1, pageSize: 10, total: 128 });
 
 const savedViews = ref<SavedView[]>([
-  { id: 'view-open', name: 'Open risks', filters: { ...filters.value, status: 'failed' }, pinned: true, shared: true, updatedAt: 'Today' },
-  { id: 'view-enterprise', name: 'Enterprise renewals', filters: { ...filters.value, tags: ['enterprise'] }, updatedAt: 'Yesterday' },
+  {
+    id: 'view-open',
+    name: 'Open risks',
+    filters: { ...filters.value, status: 'failed' },
+    pinned: true,
+    shared: true,
+    updatedAt: 'Today',
+  },
+  {
+    id: 'view-enterprise',
+    name: 'Enterprise renewals',
+    filters: { ...filters.value, tags: ['enterprise'] },
+    updatedAt: 'Yesterday',
+  },
 ]);
 
 function applyFilters(nextFilters: QueryFilters) {
@@ -41,7 +53,17 @@ function applyFilters(nextFilters: QueryFilters) {
 }
 
 function resetFilters() {
-  filters.value = { keyword: '', status: 'all', dateRange: [], tags: [], owner: '', region: '', minAmount: null, maxAmount: null, urlSynced: false };
+  filters.value = {
+    keyword: '',
+    status: 'all',
+    dateRange: [],
+    tags: [],
+    owner: '',
+    region: '',
+    minAmount: null,
+    maxAmount: null,
+    urlSynced: false,
+  };
   selectedRows.value = [];
 }
 

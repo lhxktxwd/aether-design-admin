@@ -13,7 +13,10 @@ import WorkspaceForm from '@/components/form/WorkspaceForm.vue';
       :breadcrumbs="['Admin', 'Settings', 'Workspace']"
     />
     <div class="mx-auto max-w-5xl space-y-6 p-8">
-      <AetherCard title="Workspace profile" description="Short comparable fields use a two-column grid on desktop and stack on smaller screens.">
+      <AetherCard
+        title="Workspace profile"
+        description="Short comparable fields use a two-column grid on desktop and stack on smaller screens."
+      >
         <WorkspaceForm />
       </AetherCard>
       <AetherCard title="Implementation rules" compact>

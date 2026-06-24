@@ -6,11 +6,33 @@
 
 ## 快速开始
 
+需要 Node `^20.19.0 || >=22.12.0`。
+
 ```bash
 npm create aether-admin@latest my-admin
 cd my-admin
 pnpm install
 pnpm dev
+```
+
+在交互式终端里，CLI 会自动进入引导流程，可以直接选择鉴权、HTTP、Mock、自动安装依赖和 Git 初始化，不需要记一长串参数。
+
+创建时也可以按需添加后台工程骨架：
+
+```bash
+npm create aether-admin@latest my-admin -- --with-auth --with-http --with-mock
+```
+
+如果希望生成后直接进入开发状态，可以使用：
+
+```bash
+npm create aether-admin@latest my-admin -- --all --install --git
+```
+
+如果需要非交互默认生成：
+
+```bash
+npm create aether-admin@latest my-admin -- --yes
 ```
 
 如果你希望使用更短的命令，也可以全局安装后使用 `cea`：
@@ -28,7 +50,11 @@ cea my-admin
 
 - Vue 3, TypeScript, Vite
 - 基于 Element Plus 行为能力的 Aether Design Admin 视觉覆盖
-- Pinia, Vue Router, Tailwind
+- Pinia, Vue Router, UnoCSS
+- Oxlint 和 Oxfmt 提供快速 lint 与 format
+- UnoCSS 替代 TailwindCSS/PostCSS
+- Oxlint/Oxfmt 替代 ESLint/Prettier
+- VS Code 推荐扩展：Vue (Official)、Oxc、UnoCSS
 - 支持多级子菜单的 Admin Layout
 - Dashboard、列表、详情、编辑、设置、设计系统示例页面
 - QueryToolbar、SavedViews、AdvancedFilterPanel、DataTablePro
@@ -47,7 +73,7 @@ cea my-admin
 ## 本地测试 CLI
 
 ```bash
-node packages/create-aether-admin/bin/create-aether-admin.js my-admin
+node packages/create-aether-admin/bin/create-aether-admin.js my-admin --with-auth --with-http
 ```
 
 ## 发布 CLI

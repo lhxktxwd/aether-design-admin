@@ -21,11 +21,16 @@ const title = computed(() => String(route.meta.title ?? 'Dashboard'));
       </ElTooltip>
       <div class="min-w-0">
         <p class="text-xs text-admin-muted">Admin / {{ title }}</p>
-        <h1 class="truncate font-display text-lg font-[650] text-admin-text">{{ title }}</h1>
+        <h1 class="truncate font-display text-lg font-650 text-admin-text">{{ title }}</h1>
       </div>
     </div>
     <div class="hidden w-[340px] md:block">
-      <ElInput v-model="appStore.searchQuery" :prefix-icon="Search" placeholder="Search records, customers, orders" clearable />
+      <ElInput
+        v-model="appStore.searchQuery"
+        :prefix-icon="Search"
+        placeholder="Search records, customers, orders"
+        clearable
+      />
     </div>
     <div class="flex items-center gap-2">
       <ElTooltip :content="appStore.darkMode ? 'Light mode' : 'Dark mode'">

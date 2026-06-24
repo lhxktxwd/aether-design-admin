@@ -15,7 +15,9 @@ const props = withDefaults(
   },
 );
 
-const allActionKeys = computed(() => Array.from(new Set(props.modules.flatMap((module) => module.actions.map((action) => action.key)))));
+const allActionKeys = computed(() =>
+  Array.from(new Set(props.modules.flatMap((module) => module.actions.map((action) => action.key)))),
+);
 
 function hasPermission(moduleKey: string, actionKey: string) {
   return value.value[moduleKey]?.includes(actionKey) ?? false;
@@ -30,15 +32,24 @@ function setPermission(moduleKey: string, actionKey: string, checked: boolean) {
 }
 
 function actionLabel(actionKey: string) {
-  return props.modules.flatMap((module) => module.actions).find((action) => action.key === actionKey)?.label ?? actionKey;
+  return (
+    props.modules.flatMap((module) => module.actions).find((action) => action.key === actionKey)?.label ?? actionKey
+  );
 }
 </script>
 
 <template>
   <div class="overflow-hidden rounded-admin border border-admin-border-soft bg-admin-surface">
-    <div class="grid min-w-[720px] border-b border-admin-border-soft bg-admin-surface-2" :style="{ gridTemplateColumns: `minmax(220px,1fr) repeat(${allActionKeys.length}, minmax(92px, 112px))` }">
+    <div
+      class="grid min-w-[720px] border-b border-admin-border-soft bg-admin-surface-2"
+      :style="{ gridTemplateColumns: `minmax(220px,1fr) repeat(${allActionKeys.length}, minmax(92px, 112px))` }"
+    >
       <div class="px-4 py-3 text-xs font-bold uppercase text-admin-muted">Module</div>
-      <div v-for="action in allActionKeys" :key="action" class="px-3 py-3 text-center text-xs font-bold uppercase text-admin-muted">
+      <div
+        v-for="action in allActionKeys"
+        :key="action"
+        class="px-3 py-3 text-center text-xs font-bold uppercase text-admin-muted"
+      >
         {{ actionLabel(action) }}
       </div>
     </div>
@@ -50,7 +61,7 @@ function actionLabel(actionKey: string) {
         :style="{ gridTemplateColumns: `minmax(220px,1fr) repeat(${allActionKeys.length}, minmax(92px, 112px))` }"
       >
         <div class="px-4 py-3">
-          <p class="text-sm font-[650] text-admin-text">{{ module.label }}</p>
+          <p class="text-sm font-650 text-admin-text">{{ module.label }}</p>
           <p v-if="module.description" class="mt-1 text-xs leading-5 text-admin-muted">{{ module.description }}</p>
         </div>
         <div v-for="action in allActionKeys" :key="action" class="flex justify-center px-3 py-3">

@@ -33,14 +33,31 @@ function moveRow(index: number, direction: -1 | 1) {
     <ElTableColumn prop="owner" label="Owner" min-width="160" />
     <ElTableColumn prop="priority" label="Priority" width="120">
       <template #default="{ row }">
-        <AetherStatusTag :label="(row as SortableTableRow).priority" :tone="toneMap[(row as SortableTableRow).priority]" />
+        <AetherStatusTag
+          :label="(row as SortableTableRow).priority"
+          :tone="toneMap[(row as SortableTableRow).priority]"
+        />
       </template>
     </ElTableColumn>
     <ElTableColumn label="Order" width="112" align="center">
       <template #default="{ $index }">
         <div class="flex justify-center gap-1">
-          <ElButton :icon="ArrowUp" circle text :disabled="$index === 0" aria-label="Move up" @click="moveRow($index, -1)" />
-          <ElButton :icon="ArrowDown" circle text :disabled="$index === rows.length - 1" aria-label="Move down" @click="moveRow($index, 1)" />
+          <ElButton
+            :icon="ArrowUp"
+            circle
+            text
+            :disabled="$index === 0"
+            aria-label="Move up"
+            @click="moveRow($index, -1)"
+          />
+          <ElButton
+            :icon="ArrowDown"
+            circle
+            text
+            :disabled="$index === rows.length - 1"
+            aria-label="Move down"
+            @click="moveRow($index, 1)"
+          />
         </div>
       </template>
     </ElTableColumn>

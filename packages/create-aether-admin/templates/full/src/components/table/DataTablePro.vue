@@ -113,7 +113,11 @@ function clearSelection() {
 
     <ErrorState v-if="error" title="Table failed to load" :description="error" @retry="emit('retry')" />
     <LoadingState v-else-if="loading && rows.length === 0" :rows="6" />
-    <EmptyState v-else-if="rows.length === 0" title="No records found" description="Adjust filters or create a new record." />
+    <EmptyState
+      v-else-if="rows.length === 0"
+      title="No records found"
+      description="Adjust filters or create a new record."
+    />
 
     <ElTable
       v-else
@@ -149,12 +153,20 @@ function clearSelection() {
       </ElTableColumn>
       <ElTableColumn fixed="right" width="64" align="center">
         <template #default="{ row }">
-          <ElButton :icon="MoreFilled" circle text aria-label="Row actions" @click="emit('rowAction', row as OrderRecord)" />
+          <ElButton
+            :icon="MoreFilled"
+            circle
+            text
+            aria-label="Row actions"
+            @click="emit('rowAction', row as OrderRecord)"
+          />
         </template>
       </ElTableColumn>
     </ElTable>
 
-    <footer class="flex flex-col gap-3 border-t border-admin-border-soft pt-4 md:flex-row md:items-center md:justify-between">
+    <footer
+      class="flex flex-col gap-3 border-t border-admin-border-soft pt-4 md:flex-row md:items-center md:justify-between"
+    >
       <p class="text-sm text-admin-muted">
         Server-side pagination · page {{ pagination.page }} · {{ pagination.pageSize }} per page
       </p>

@@ -6,16 +6,16 @@ This project is usable as a practical Admin UI layer on top of Element Plus. Pre
 
 ## Added Business Components
 
-| Component | Purpose | Element Plus Mapping |
-| --- | --- | --- |
-| `UserSelect` | Assign owners, reviewers and members | `ElSelect`, `ElOption`, `ElTag` |
-| `DepartmentTreeSelect` | Pick departments or organization scopes | `ElTreeSelect` |
-| `DictionarySelect` | Select grouped business dictionaries | `ElSelect`, `ElOptionGroup` |
-| `PermissionMatrix` | Edit role/module/action permissions | `ElCheckbox` |
-| `StatusFlow` | Move records through workflow states | `ElButton` plus Aether Design status tokens |
-| `EditableDataTable` | Inline item editing and totals | `ElTable`, `ElInput`, `ElInputNumber`, `ElSelect` |
-| `TreeDataTable` | Hierarchical records | `ElTable` tree rows |
-| `SortableDataTable` | Manual priority ordering | `ElTable`, icon buttons |
+| Component              | Purpose                                 | Element Plus Mapping                              |
+| ---------------------- | --------------------------------------- | ------------------------------------------------- |
+| `UserSelect`           | Assign owners, reviewers and members    | `ElSelect`, `ElOption`, `ElTag`                   |
+| `DepartmentTreeSelect` | Pick departments or organization scopes | `ElTreeSelect`                                    |
+| `DictionarySelect`     | Select grouped business dictionaries    | `ElSelect`, `ElOptionGroup`                       |
+| `PermissionMatrix`     | Edit role/module/action permissions     | `ElCheckbox`                                      |
+| `StatusFlow`           | Move records through workflow states    | `ElButton` plus Aether Design status tokens       |
+| `EditableDataTable`    | Inline item editing and totals          | `ElTable`, `ElInput`, `ElInputNumber`, `ElSelect` |
+| `TreeDataTable`        | Hierarchical records                    | `ElTable` tree rows                               |
+| `SortableDataTable`    | Manual priority ordering                | `ElTable`, icon buttons                           |
 
 ## Recommended Admin Page Coverage
 

@@ -6,11 +6,33 @@ Modern Vue 3 + Element Plus Admin Starter with the Aether Design Admin visual sy
 
 ## Quick Start
 
+Requires Node `^20.19.0 || >=22.12.0`.
+
 ```bash
 npm create aether-admin@latest my-admin
 cd my-admin
 pnpm install
 pnpm dev
+```
+
+The CLI starts a guided setup in an interactive terminal, so you can choose auth, HTTP, mock, install and git initialization without memorizing flags.
+
+With optional admin scaffolding:
+
+```bash
+npm create aether-admin@latest my-admin -- --with-auth --with-http --with-mock
+```
+
+For the most complete out-of-the-box setup:
+
+```bash
+npm create aether-admin@latest my-admin -- --all --install --git
+```
+
+For non-interactive default generation:
+
+```bash
+npm create aether-admin@latest my-admin -- --yes
 ```
 
 You can also use the short CLI alias after installing the package globally:
@@ -28,7 +50,11 @@ Deploy this repository root to Vercel. The root app is the live demo, while the 
 
 - Vue 3, TypeScript, Vite
 - Element Plus behavior with Aether Design Admin styling
-- Pinia, Vue Router and Tailwind
+- Pinia, Vue Router and UnoCSS
+- Oxlint and Oxfmt for fast linting and formatting
+- UnoCSS replaces TailwindCSS/PostCSS in the starter
+- Oxlint/Oxfmt replace ESLint/Prettier in the starter
+- VS Code recommendations including Vue (Official), Oxc and UnoCSS
 - Admin layout with multi-level sidebar navigation
 - Dashboard, list, detail, edit, settings and design system pages
 - Query toolbar, saved views, advanced filters and DataTable Pro
@@ -47,7 +73,7 @@ Deploy this repository root to Vercel. The root app is the live demo, while the 
 ## CLI Development
 
 ```bash
-node packages/create-aether-admin/bin/create-aether-admin.js my-admin
+node packages/create-aether-admin/bin/create-aether-admin.js my-admin --with-auth --with-http
 ```
 
 ## Publish CLI

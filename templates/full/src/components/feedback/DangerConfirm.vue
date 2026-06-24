@@ -43,20 +43,37 @@ function handleCancel() {
 </script>
 
 <template>
-  <ElDialog v-model="model" :title="title" width="460px" :close-on-click-modal="!loading" :close-on-press-escape="!loading" @closed="handleClosed">
+  <ElDialog
+    v-model="model"
+    :title="title"
+    width="460px"
+    :close-on-click-modal="!loading"
+    :close-on-press-escape="!loading"
+    @closed="handleClosed"
+  >
     <div class="flex gap-4">
-      <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[rgb(var(--admin-danger))] text-[rgb(var(--admin-danger-text))]">
+      <div
+        class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[rgb(var(--admin-danger))] text-[rgb(var(--admin-danger-text))]"
+      >
         <WarningFilled class="size-5" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="text-sm leading-6 text-admin-muted">{{ description }}</p>
-        <ElInput v-if="confirmText" v-model="typedText" class="mt-4" :disabled="loading" :placeholder="`Type ${confirmText} to confirm`" />
+        <ElInput
+          v-if="confirmText"
+          v-model="typedText"
+          class="mt-4"
+          :disabled="loading"
+          :placeholder="`Type ${confirmText} to confirm`"
+        />
       </div>
     </div>
     <template #footer>
       <div class="flex justify-end gap-2">
         <ElButton :disabled="loading" @click="handleCancel">Cancel</ElButton>
-        <ElButton type="danger" :loading="loading" :disabled="!canConfirm" @click="emit('confirm')">{{ confirmLabel }}</ElButton>
+        <ElButton type="danger" :loading="loading" :disabled="!canConfirm" @click="emit('confirm')">{{
+          confirmLabel
+        }}</ElButton>
       </div>
     </template>
   </ElDialog>

@@ -25,10 +25,7 @@ const toneClass = computed(() => {
 </script>
 
 <template>
-  <span
-    class="inline-flex h-6 items-center rounded-full px-2.5 text-xs font-[650] leading-none"
-    :class="toneClass"
-  >
+  <span class="inline-flex h-6 items-center rounded-full px-2.5 text-xs font-650 leading-none" :class="toneClass">
     {{ label }}
   </span>
 </template>

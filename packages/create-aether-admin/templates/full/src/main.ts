@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import ElementPlus from 'element-plus';
+import 'virtual:uno.css';
 import 'element-plus/dist/index.css';
 import './styles/main.css';
 import App from './App.vue';

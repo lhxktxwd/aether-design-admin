@@ -56,9 +56,37 @@ const dictionaryOptions: DictionaryOption[] = [
 ];
 
 const permissionModules: PermissionModule[] = [
-  { key: 'orders', label: 'Orders', description: 'Order list, detail and export permissions.', actions: [{ key: 'view', label: 'View' }, { key: 'create', label: 'Create' }, { key: 'edit', label: 'Edit' }, { key: 'delete', label: 'Delete' }] },
-  { key: 'billing', label: 'Billing', description: 'Invoice and payment operations.', actions: [{ key: 'view', label: 'View' }, { key: 'edit', label: 'Edit' }, { key: 'export', label: 'Export' }] },
-  { key: 'settings', label: 'Settings', description: 'Workspace configuration.', actions: [{ key: 'view', label: 'View' }, { key: 'edit', label: 'Edit' }, { key: 'delete', label: 'Delete' }] },
+  {
+    key: 'orders',
+    label: 'Orders',
+    description: 'Order list, detail and export permissions.',
+    actions: [
+      { key: 'view', label: 'View' },
+      { key: 'create', label: 'Create' },
+      { key: 'edit', label: 'Edit' },
+      { key: 'delete', label: 'Delete' },
+    ],
+  },
+  {
+    key: 'billing',
+    label: 'Billing',
+    description: 'Invoice and payment operations.',
+    actions: [
+      { key: 'view', label: 'View' },
+      { key: 'edit', label: 'Edit' },
+      { key: 'export', label: 'Export' },
+    ],
+  },
+  {
+    key: 'settings',
+    label: 'Settings',
+    description: 'Workspace configuration.',
+    actions: [
+      { key: 'view', label: 'View' },
+      { key: 'edit', label: 'Edit' },
+      { key: 'delete', label: 'Delete' },
+    ],
+  },
 ];
 
 const workflowSteps: WorkflowStep[] = [
@@ -90,8 +118,26 @@ const editableRows = ref<EditableSkuRow[]>([
 ]);
 
 const treeRows: TreeTableRow[] = [
-  { id: 'p1', name: 'North America', owner: 'Sarah Chen', status: 'Active', children: [{ id: 'p1-1', name: 'Enterprise East', owner: 'Dylan Park', status: 'Active' }, { id: 'p1-2', name: 'Enterprise West', owner: 'Nina Patel', status: 'Pending' }] },
-  { id: 'p2', name: 'Asia Pacific', owner: 'Alex Kim', status: 'Active', children: [{ id: 'p2-1', name: 'Singapore', owner: 'Sarah Chen', status: 'Active' }, { id: 'p2-2', name: 'Tokyo', owner: 'Dylan Park', status: 'Disabled' }] },
+  {
+    id: 'p1',
+    name: 'North America',
+    owner: 'Sarah Chen',
+    status: 'Active',
+    children: [
+      { id: 'p1-1', name: 'Enterprise East', owner: 'Dylan Park', status: 'Active' },
+      { id: 'p1-2', name: 'Enterprise West', owner: 'Nina Patel', status: 'Pending' },
+    ],
+  },
+  {
+    id: 'p2',
+    name: 'Asia Pacific',
+    owner: 'Alex Kim',
+    status: 'Active',
+    children: [
+      { id: 'p2-1', name: 'Singapore', owner: 'Sarah Chen', status: 'Active' },
+      { id: 'p2-2', name: 'Tokyo', owner: 'Dylan Park', status: 'Disabled' },
+    ],
+  },
 ];
 
 const sortableRows = ref<SortableTableRow[]>([
@@ -111,7 +157,10 @@ const sortableRows = ref<SortableTableRow[]>([
     />
 
     <div class="space-y-6 p-8">
-      <AetherCard title="Business selectors" description="User, organization and dictionary selectors for common admin forms.">
+      <AetherCard
+        title="Business selectors"
+        description="User, organization and dictionary selectors for common admin forms."
+      >
         <ElForm label-position="top" class="grid gap-4 lg:grid-cols-2">
           <ElFormItem label="Policy name">
             <ElInput v-model="form.name" />
@@ -128,11 +177,17 @@ const sortableRows = ref<SortableTableRow[]>([
         </ElForm>
       </AetherCard>
 
-      <AetherCard title="Status flow" description="Workflow state switching for approvals, publishing and ticket lifecycles.">
+      <AetherCard
+        title="Status flow"
+        description="Workflow state switching for approvals, publishing and ticket lifecycles."
+      >
         <StatusFlow v-model="currentStep" :steps="workflowSteps" />
       </AetherCard>
 
-      <AetherCard title="Permission matrix" description="Role and permission editing with weak borders and dense scanning.">
+      <AetherCard
+        title="Permission matrix"
+        description="Role and permission editing with weak borders and dense scanning."
+      >
         <PermissionMatrix v-model="permissions" :modules="permissionModules" />
       </AetherCard>
 
@@ -145,7 +200,10 @@ const sortableRows = ref<SortableTableRow[]>([
         </AetherCard>
       </div>
 
-      <AetherCard title="Tree table" description="Hierarchical data display for departments, menus and regional ownership.">
+      <AetherCard
+        title="Tree table"
+        description="Hierarchical data display for departments, menus and regional ownership."
+      >
         <TreeDataTable :rows="treeRows" />
       </AetherCard>
     </div>

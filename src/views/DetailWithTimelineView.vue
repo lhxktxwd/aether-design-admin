@@ -21,10 +21,18 @@ const descriptionItems: DescriptionItem[] = [
 
 <template>
   <section>
-    <PageHeader eyebrow="Detail system" title="Detail With Timeline Page" description="Description list, metadata, timeline and attachments in a reusable detail layout." :breadcrumbs="['Admin', 'Detail With Timeline']" />
+    <PageHeader
+      eyebrow="Detail system"
+      title="Detail With Timeline Page"
+      description="Description list, metadata, timeline and attachments in a reusable detail layout."
+      :breadcrumbs="['Admin', 'Detail With Timeline']"
+    />
     <div class="grid gap-6 p-8 xl:grid-cols-[1fr_380px]">
       <div class="space-y-6">
-        <AetherCard title="Description list" description="Copyable fields and empty field states are handled inside the component.">
+        <AetherCard
+          title="Description list"
+          description="Copyable fields and empty field states are handled inside the component."
+        >
           <DescriptionList :items="descriptionItems" />
         </AetherCard>
         <AetherCard title="Attachments">

@@ -9,7 +9,12 @@ const appStore = useAppStore();
 
 <template>
   <section>
-    <PageHeader eyebrow="Audit" title="Audit Log Page" description="Operational log list with actor, target, time and diff summary." :breadcrumbs="['Admin', 'Audit Log']" />
+    <PageHeader
+      eyebrow="Audit"
+      title="Audit Log Page"
+      description="Operational log list with actor, target, time and diff summary."
+      :breadcrumbs="['Admin', 'Audit Log']"
+    />
     <div class="p-8">
       <AetherCard title="Audit log" description="Designed for high-density compliance inspection.">
         <AuditLogList :entries="appStore.auditLogs" />

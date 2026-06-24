@@ -42,7 +42,7 @@ const densityOptions = [
   <header class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
     <div class="min-w-0">
       <div class="flex items-center gap-2">
-        <h2 class="font-display text-lg font-[650] text-admin-text">{{ title }}</h2>
+        <h2 class="font-display text-lg font-650 text-admin-text">{{ title }}</h2>
         <span class="rounded-full bg-admin-surface-2 px-2 py-1 font-mono text-xs font-bold text-admin-muted">
           {{ total }}
         </span>

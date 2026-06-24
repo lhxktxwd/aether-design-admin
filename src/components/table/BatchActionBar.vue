@@ -48,7 +48,7 @@ function buttonType(tone?: StatusTone) {
         <span class="rounded-full bg-admin-primary px-2.5 py-1 font-mono text-xs font-bold text-white">
           {{ selectedCount }}
         </span>
-        <span class="text-sm font-[650]">{{ selectedCount }} rows selected</span>
+        <span class="text-sm font-650">{{ selectedCount }} rows selected</span>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
@@ -63,9 +63,7 @@ function buttonType(tone?: StatusTone) {
         >
           {{ action.label }}
         </ElButton>
-        <ElButton :icon="Close" size="small" text :disabled="loading" @click="emit('clear')">
-          Clear
-        </ElButton>
+        <ElButton :icon="Close" size="small" text :disabled="loading" @click="emit('clear')"> Clear </ElButton>
       </div>
     </div>
   </Transition>

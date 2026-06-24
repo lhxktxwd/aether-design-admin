@@ -6,16 +6,16 @@
 
 ## 新增业务组件
 
-| 组件 | 用途 | Element Plus 映射 |
-| --- | --- | --- |
-| `UserSelect` | 选择负责人、审核人、成员 | `ElSelect`, `ElOption`, `ElTag` |
-| `DepartmentTreeSelect` | 选择部门、组织范围 | `ElTreeSelect` |
-| `DictionarySelect` | 选择分组业务字典 | `ElSelect`, `ElOptionGroup` |
-| `PermissionMatrix` | 编辑角色、模块、动作权限 | `ElCheckbox` |
-| `StatusFlow` | 处理审批、发布、工单状态流转 | `ElButton` + Aether Design 状态 token |
-| `EditableDataTable` | 行内编辑明细、SKU、配额 | `ElTable`, `ElInput`, `ElInputNumber`, `ElSelect` |
-| `TreeDataTable` | 展示层级数据 | `ElTable` tree rows |
-| `SortableDataTable` | 手动排序优先级 | `ElTable`, icon buttons |
+| 组件                   | 用途                         | Element Plus 映射                                 |
+| ---------------------- | ---------------------------- | ------------------------------------------------- |
+| `UserSelect`           | 选择负责人、审核人、成员     | `ElSelect`, `ElOption`, `ElTag`                   |
+| `DepartmentTreeSelect` | 选择部门、组织范围           | `ElTreeSelect`                                    |
+| `DictionarySelect`     | 选择分组业务字典             | `ElSelect`, `ElOptionGroup`                       |
+| `PermissionMatrix`     | 编辑角色、模块、动作权限     | `ElCheckbox`                                      |
+| `StatusFlow`           | 处理审批、发布、工单状态流转 | `ElButton` + Aether Design 状态 token             |
+| `EditableDataTable`    | 行内编辑明细、SKU、配额      | `ElTable`, `ElInput`, `ElInputNumber`, `ElSelect` |
+| `TreeDataTable`        | 展示层级数据                 | `ElTable` tree rows                               |
+| `SortableDataTable`    | 手动排序优先级               | `ElTable`, icon buttons                           |
 
 ## 推荐页面覆盖
 
